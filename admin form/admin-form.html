@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hospital Admin Form</title>
+  <link rel="stylesheet" href="./admin-form.css" />
+</head>
+
+<body>
+  <form method="POST" name="hospitalForm" class="form-container" enctype="multipart/form-data">
+    <h2>Hospital Admin Form</h2>
+    <div class="form-row">
+      <div class="input-box row-1">
+        <label for="">Hospital Name</label>
+        <input type="text" name="name" />
+      </div>
+      <div class="input-box">
+        <label for="">Hospital Description</label>
+        <input type="text" name="description" />
+      </div>
+    </div>
+    <div class="form-row row-2">
+      <div class="input-box box-1">
+        <label for="">Hospital Type</label>
+        <input list="hospital-type" name="type" />
+        <datalist id="hospital-type" style="width: 400px; background-color: #8c0">
+          <option value="Government">Government</option>
+          <option value="Private">Private</option>
+        </datalist>
+      </div>
+      <div class="input-box box-2">
+        <label for="">Departments</label>
+        <div class="input-btn">
+          <input type="text" name="department" />
+          <span style="cursor: pointer" onclick="addDept()">+</span>
+        </div>
+      </div>
+      <div class="department-box box-3">
+        <!-- <p><span>&times;</span>Cardiology</p> -->
+        <!-- <p><span>&times;</span>Cardiology</p> -->
+      </div>
+    </div>
+    <div class="form-row row-3">
+      <div class="input-box box-1">
+        <label for="">Email Address</label>
+        <input type="text" name="email" />
+      </div>
+      <div class="input-box box-2">
+        <label for="">Total Beds</label>
+        <input type="text" name="beds" />
+      </div>
+      <div class="input-box box-3">
+        <label for="">Total ICUs</label>
+        <input type="text" name="icus" />
+      </div>
+    </div>
+    <div class="form-row row-4">
+      <div class="input-box box-1">
+        <label for="">Address</label>
+        <input type="text" name="address" />
+      </div>
+      <div class="input-box box-2">
+        <label for="">Pincode</label>
+        <input type="text" name="pincode" />
+      </div>
+      <div class="input-box box-3">
+        <label for="">Contact Number</label>
+        <input type="text" name="contact" />
+      </div>
+    </div>
+    <div class="form-row row-5">
+      <div class="input-box box-1">
+        <label for="mainImg">
+          <div>
+            Upload Main Hospital Image
+            <input type="file" accept="image/*" name="mainHospitalImage" id="mainImg" onchange="addMainImage(event)" />
+          </div>
+        </label>
+      </div>
+      <div class="input-box box-2">
+        <label for="moreImgs">
+          <div>
+            Upload More Hospital Image
+            <input type="file" accept="image/*" name="moreHospitalImages" id="moreImgs" onchange="addMoreImages(event)"
+              multiple />
+          </div>
+        </label>
+      </div>
+      <div class="input-box box-3">
+        <div class="img-container">
+          <!-- <div class="single-img">
+              <img src="./image/dummy-logo.jpg" alt="" />
+              <div>&times;</div>
+            </div>
+            <div class="single-img">
+              <img src="./image/dummy-logo.jpg" alt="" />
+              <div>&times;</div>
+            </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="form-row row-6">
+      <div class="input-box box-1">
+        <label for="">Facilities</label>
+        <input type="text" name="facName" />
+      </div>
+      <div class="input-box box-2">
+        <label for="">Icon</label>
+        <select name="facIcon" id="">
+          <option value="">Select</option>
+        </select>
+      </div>
+      <div class="input-box box-3">
+        <label for="">Facilities Description</label>
+        <input type="text" name="facDesc" />
+      </div>
+      <div class="input-box box-4">
+        <button type="button" onclick="addFacility()">Add +</button>
+      </div>
+    </div>
+    <div class="form-row row-7">
+      <div class="facility-container">
+        <!-- <div class="facility-box">
+            <div class="header">
+              <div>ico</div>
+              <div>&times;</div>
+            </div>
+            <div class="body">
+              <h4>Indoor Pharmacy</h4>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div> -->
+      </div>
+    </div>
+    <div class="submit-btn-row">
+      <div class="btn-container">
+        <div class="sign">
+          <input type="checkbox" name="nda" id="sign" />
+          <label for="sign">I want to protect my data by signing an NDA</label>
+        </div>
+        <button type="button">Submit</button>
+      </div>
+    </div>
+  </form>
+
+  <script src="./admin-form.js"></script>
+</body>
+
+</html>
